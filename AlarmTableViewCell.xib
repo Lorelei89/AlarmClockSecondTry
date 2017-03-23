@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AlarmCell" rowHeight="80" id="KGk-i7-Jjw" customClass="AlarmTableViewCell" customModule="AlarmClockSecondTry" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tbR-lz-aGL">
+                        <rect key="frame" x="8" y="53" width="304" height="26"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="19"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ifS-W0-eOX">
+                        <rect key="frame" x="263" y="23" width="51" height="31"/>
+                        <connections>
+                            <action selector="switchAction:" destination="KGk-i7-Jjw" eventType="valueChanged" id="LDQ-yD-B9F"/>
+                        </connections>
+                    </switch>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21:35" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vo0-5E-PZZ">
+                        <rect key="frame" x="8" y="-6" width="150.5" height="71"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="60"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="tbR-lz-aGL" secondAttribute="trailing" constant="8" id="4J2-0o-gv9"/>
+                    <constraint firstItem="ifS-W0-eOX" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="EvE-dU-9b9"/>
+                    <constraint firstAttribute="bottom" secondItem="tbR-lz-aGL" secondAttribute="bottom" constant="0.5" id="Pgf-ul-kPF"/>
+                    <constraint firstItem="vo0-5E-PZZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="WFj-Xm-Heh"/>
+                    <constraint firstItem="ifS-W0-eOX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="15" id="axt-ju-r49"/>
+                    <constraint firstItem="vo0-5E-PZZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="-6" id="gub-d1-cGN"/>
+                    <constraint firstItem="tbR-lz-aGL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="qB9-Fq-N7L"/>
+                    <constraint firstItem="tbR-lz-aGL" firstAttribute="top" secondItem="ifS-W0-eOX" secondAttribute="bottom" constant="-1" id="vTW-WA-lrZ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="alarmNameLabel" destination="tbR-lz-aGL" id="705-XX-GSK"/>
+                <outlet property="switchOutlet" destination="ifS-W0-eOX" id="8KF-Zt-qyr"/>
+                <outlet property="timeLabel" destination="vo0-5E-PZZ" id="UaG-ah-oqg"/>
+            </connections>
+            <point key="canvasLocation" x="33" y="55"/>
+        </tableViewCell>
+    </objects>
+</document>
