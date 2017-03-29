@@ -38,8 +38,11 @@ class FirstViewController: UIViewController {
     //MARK: - Api Request
     func getDataFromApi () {
         guard let url = URL(string: apiUrlEndPoint) else {return}
-        
-        Alamofire.request(url).responseJSON { [weak weakSelf = self] (response) in
+        let headers: HTTPHeaders = [
+            "x-token": "c2136c02-11f3-4357-bd87-2c2ce9ccbf18",
+            "Accept": "application/json"
+        ]
+        Alamofire.request(url , headers: headers).responseJSON { [weak weakSelf = self] (response) in
             if let json = response.result.value as? [[String: AnyObject]] {
                 weakSelf?.writeAlarmsToArray(json: json)
             }
@@ -49,13 +52,12 @@ class FirstViewController: UIViewController {
     func writeAlarmsToArray (json: [[String: AnyObject]]) {
         for alarm in json {
             guard let id = alarm["id"] as? Int else {return}
-            guard let uuid = alarm["UUID"] as? String else {return}
             guard let hour = alarm["hour"] as? Int else {return}
-            guard let minute = alarm["minute"] as? Int else {return}
+            guard let minute = alarm["minutes"] as? Int else {return}
             guard let label = alarm["label"] as? String else {return}
             guard let enabled = alarm["enabled"] as? Bool else {return}
             guard let token = alarm["token"] as? String else {return}
-            let alarmObject = AlarmModel(id:id, hour: hour, minutes: minute, label: label, enabled: enabled, token: token, uuid:uuid)
+            let alarmObject = AlarmModel(id:id, hour: hour, minutes: minute, label: label, enabled: enabled, token: token)
             self.alarms.append(alarmObject)
         }
     }

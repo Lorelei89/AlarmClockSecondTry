@@ -14,15 +14,14 @@ class AlarmModel: NSObject {
     var id:Int = 0
     var hour: Int = 0
     var minutes: Int = 0
-    var label: String = "Alarm"
+    var label: String = ""
     var enabled: Bool = false
-    var uuid :String = ""
-    var token:String = "4b412813-0bc1-49a3-bd20-97751d28e10b"
+    var token:String = ""
     var date:Date = Date()
     
     /* CONSTRUCTORS */
 
-    init(id:Int,hour:Int, minutes:Int, label:String , enabled:Bool, token:String, uuid:String ){
+    init(id:Int,hour:Int, minutes:Int, label:String , enabled:Bool, token:String){
         super.init()
         self.id = id
         self.hour = hour
@@ -30,7 +29,6 @@ class AlarmModel: NSObject {
         self.minutes = minutes
         self.enabled = enabled
         self.token = token
-        self.uuid = uuid
     }
 
     

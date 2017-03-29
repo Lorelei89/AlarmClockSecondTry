@@ -21,7 +21,7 @@ public struct TimeFormat {
 }
 
 
-public let apiUrlEndPoint = " http://red.maxcode.net/api/clocks"
+public let apiUrlEndPoint = "http://red.maxcode.net/api/clocks"
 public let firstTabBarButton = "Alarm"
 public let secondTabBarButton = "Timer"
 public let barColor = UIColor(red: 40/255, green: 40/255, blue: 40/255, alpha: 1.0)
